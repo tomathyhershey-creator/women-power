@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Empowered - Empowering Women to Lead & Inspire</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #030213;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #9333ea, #ec4899);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .logo-text {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #9333ea;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #9333ea, #ec4899);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #7c3aed, #db2777);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            color: inherit;
+        }
+
+        .btn-outline:hover {
+            background: linear-gradient(135deg, #9333ea, #ec4899);
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #faf5ff, #fdf2f8, #fff7ed);
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #9333ea, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: #6b7280;
+            margin-bottom: 32px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-icon {
+            width: 32px;
+            height: 32px;
+            margin: 0 auto 8px;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 600;
+            color: #030213;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #6b7280;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: -24px;
+            right: -24px;
+            background: linear-gradient(135deg, #9333ea, #ec4899);
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .section-title p {
+            font-size: 18px;
+            color: #6b7280;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Card Styles */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s;
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        /* About Section */
+        .about {
+            background: #ffffff;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 24px;
+        }
+
+        .about-text p {
+            color: #6b7280;
+            margin-bottom: 24px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            width: 20px;
+            height: 20px;
+            background: #10b981;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .value-card {
+            text-align: center;
+        }
+
+        .value-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #9333ea, #ec4899);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            margin: 0 auto 16px;
+        }
+
+        /* Stories Section */
+        .stories {
+            background: linear-gradient(to bottom, #faf5ff, #ffffff);
+            padding: 80px 0;
+        }
+
+        .story-card {
+            overflow: hidden;
+        }
+
+        .story-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .story-content {
+            padding: 24px;
+        }
+
+        .story-meta {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .badge-primary {
+            background: linear-gradient(135deg, #9333ea, #ec4899);
+            color: white;
+        }
+
+        .badge-secondary {
+            background: #f3f4f6;
+            color: #374151;
+        }
+
+        .story-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .story-subtitle {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 16px;
+        }
+
+        .story-text {
+            color: #6b7280;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        /* Contact Form */
+        .contact {
+            background: linear-gradient(to bottom, #faf5ff, #ffffff);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #9333ea;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 64px 0 24px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .footer-brand .logo-icon {
+            width: 40px;
+            height: 40px;
+            font-size: 16px;
+        }
+
+        .footer-text {
+            color: #d1d5db;
+            margin-bottom: 24px;
+            max-width: 400px;
+        }
+
+        .footer-section h4 {
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #9333ea;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: #374151;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .social-link:hover {
+            background: linear-gradient(135deg, #9333ea, #ec4899);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        .newsletter {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .newsletter input {
+            flex: 1;
+            padding: 8px 12px;
+            border: 1px solid #374151;
+            border-radius: 6px;
+            background: #374151;
+            color: white;
+        }
+
+        .newsletter input::placeholder {
+            color: #9ca3af;
+        }
+
+        .newsletter .btn {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-4 {
+            margin-bottom: 16px;
+        }
+
+        .mb-8 {
+            margin-bottom: 32px;
+        }
+
+        .mt-8 {
+            margin-top: 32px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .items-center {
+            align-items: center;
+        }
+
+        .justify-between {
+            justify-content: space-between;
+        }
+
+        .gap-4 {
+            gap: 16px;
+        }
+
+        .w-full {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">WE</div>
+                    <span class="logo-text">Women Empowered</span>
+                </a>
+
+                <nav class="nav">
+                    <a href="#about">About</a>
+                    <a href="#stories">Stories</a>
+                    <a href="#articles">Articles</a>
+                    <a href="#resources">Resources</a>
+                    <a href="#events">Events</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#" class="btn btn-primary">Join Our Community</a>
+                </nav>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            </div>
+
+            <nav class="mobile-nav" id="mobileNav">
+                <a href="#about" onclick="toggleMobileMenu()">About</a>
+                <a href="#stories" onclick="toggleMobileMenu()">Stories</a>
+                <a href="#articles" onclick="toggleMobileMenu()">Articles</a>
+                <a href="#resources" onclick="toggleMobileMenu()">Resources</a>
+                <a href="#events" onclick="toggleMobileMenu()">Events</a>
+                <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+                <a href="#" class="btn btn-primary">Join Our Community</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>
+                        Empowering Women to 
+                        <span class="gradient-text">Lead & Inspire</span>
+                    </h1>
+                    <p>
+                        Join our global community dedicated to supporting, celebrating, and amplifying women's voices across all industries. Together, we're breaking barriers and creating lasting change.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Get Involved →</a>
+                        <a href="#about" class="btn btn-outline">Learn Our Mission</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-number">10K+</div>
+                            <div class="stat-label">Community Members</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Success Stories</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-icon">❤️</div>
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Countries Reached</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="D:\Amperintal\smth\552871500_787011224102245_2758371721609731393_n.jpg">
+                        <div style="font-size: 14px; font-weight: 500;">Join the Movement</div>
+                        <div style="font-size: 12px; opacity: 0.9;">Making impact every day</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Mission & Vision</h2>
+                <p>We believe every woman deserves the opportunity to reach her full potential. Our platform connects, educates, and empowers women to break barriers and achieve extraordinary success.</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Breaking Barriers, Building Futures</h3>
+                    <p>Since our founding, we've been committed to addressing the systemic challenges that women face in their personal and professional journeys. Through mentorship, education, and community support, we're creating pathways to success that didn't exist before.</p>
+                    <ul class="feature-list">
+                        <li>Comprehensive mentorship programs</li>
+                        <li>Professional development workshops</li>
+                        <li>Networking opportunities with industry leaders</li>
+                        <li>Educational resources and scholarships</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1636986905406-758b0e280f49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMHN1cHBvcnRpbmclMjB3b21lbnxlbnwxfHx8fDE3NTg4NzgwNzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Women supporting women">
+                </div>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h4>Global Impact</h4>
+                    <p>Creating positive change for women worldwide through education and opportunity.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💡</div>
+                    <h4>Innovation</h4>
+                    <p>Fostering creativity and breakthrough thinking in traditionally male-dominated fields.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🛡️</div>
+                    <h4>Safe Spaces</h4>
+                    <p>Providing secure environments where women can share, learn, and grow without judgment.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">✅</div>
+                    <h4>Authentic Support</h4>
+                    <p>Building genuine connections and mentorship opportunities that last a lifetime.</p>
+                </div>
+            </div>
+
+            <div class="card mt-8" style="background: linear-gradient(135deg, #faf5ff, #fdf2f8); padding: 48px; text-align: center;">
+                <h3 class="mb-4">Meet Our Team</h3>
+                <p style="color: #6b7280; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Our diverse team of leaders, advocates, and changemakers comes from various industries and backgrounds, united by our shared commitment to women's empowerment.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px;">
+                    <div>
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #a855f7, #ec4899); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; font-weight: bold;">NS</div>
+                        <h4>Nicole Sanchez</h4>
+                        <p style="font-size: 14px; color: #6b7280;">Founder & CEO</p>
+                    </div>
+                    <div>
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #ec4899, #f97316); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; font-weight: bold;">JS</div>
+                        <h4>Jairuh Salem</h4>
+                        <p style="font-size: 14px; color: #6b7280;">Program Director</p>
+                    </div>
+                    <div>
+                        <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #f97316, #a855f7); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; font-weight: bold;">AC</div>
+                        <h4>Ayesha Cajutol</h4>
+                        <p style="font-size: 14px; color: #6b7280;">Community Manager</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories Section -->
+    <section id="stories" class="stories">
+        <div class="container">
+            <div class="section-title">
+                <h2>Inspiring Success Stories</h2>
+                <p>Meet the incredible women who are making waves in their industries and inspiring others to follow their dreams.</p>
+            </div>
+
+            <div class="card-grid mb-8">
+                <div class="card story-card">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMGluJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NTg5ODQxNTF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Elena Rodriguez" class="story-image">
+                    <div class="story-content">
+                        <div class="story-meta">
+                            <span class="badge badge-secondary">Technology</span>
+                        </div>
+                        <h3 class="story-title">Elena Rodriguez</h3>
+                        <p class="story-subtitle">Tech Entrepreneur, AI Solutions Inc.</p>
+                        <p class="story-text">From coding bootcamp graduate to leading a $50M AI startup, Elena's journey shows how mentorship and community support can transform careers in tech.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;">
+                            <span class="badge" style="background: linear-gradient(135deg, #ddd6fe, #fce7f3); color: #7c3aed;">Raised $50M Series A</span>
+                            <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 14px;">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card story-card">
+                    <img src="https://images.unsplash.com/photo-1591218214141-45545921d2d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMGdyYWR1YXRlJTIwY2VsZWJyYXRpb258ZW58MXx8fHwxNzU4OTg0MTUxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Dr. Priya Patel" class="story-image">
+                    <div class="story-content">
+                        <div class="story-meta">
+                            <span class="badge badge-secondary">Healthcare</span>
+                        </div>
+                        <h3 class="story-title">Dr. Priya Patel</h3>
+                        <p class="story-subtitle">Medical Researcher, Global Health Institute</p>
+                        <p class="story-text">Breaking barriers in medical research, Dr. Patel's groundbreaking work on women's health has impacted millions of lives worldwide.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;">
+                            <span class="badge" style="background: linear-gradient(135deg, #ddd6fe, #fce7f3); color: #7c3aed;">Published 50+ Research Papers</span>
+                            <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 14px;">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card story-card">
+                    <img src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmZW1hbGUlMjBlbnRyZXByZW5ldXJ8ZW58MXx8fHwxNzU4OTg0MTQ4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Jessica Thompson" class="story-image">
+                    <div class="story-content">
+                        <div class="story-meta">
+                            <span class="badge badge-secondary">Social Impact</span>
+                        </div>
+                        <h3 class="story-title">Jessica Thompson</h3>
+                        <p class="story-subtitle">Social Impact Leader, Change Makers Foundation</p>
+                        <p class="story-text">Jessica transformed her passion for social justice into a global movement, empowering over 100,000 women in underserved communities.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;">
+                            <span class="badge" style="background: linear-gradient(135deg, #ddd6fe, #fce7f3); color: #7c3aed;">Impacted 100K+ Lives</span>
+                            <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 14px;">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="padding: 48px; text-align: center;">
+                <h3 class="mb-4">What Our Community Says</h3>
+                <p style="color: #6b7280; margin-bottom: 48px;">Real testimonials from women who have transformed their careers through our platform.</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+                    <div>
+                        <div style="font-size: 32px; color: #9333ea; margin-bottom: 16px;">"</div>
+                        <p style="font-style: italic; color: #6b7280; margin-bottom: 16px;">“I raise up my voice—not so I can shout, but so that those without a voice can be heard. … We cannot all succeed when half of us are held back.”</p>
+                        <div>
+                            <p style="font-weight: 600;">Malala Yousafzai</p>
+                            <p style="font-size: 14px; color: #6b7280;">American host and television producer</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="font-size: 32px; color: #9333ea; margin-bottom: 16px;">"</div>
+                        <p style="font-style: italic; color: #6b7280; margin-bottom: 16px;"> “Think like a queen. A queen is not afraid to fail. Failure is another stepping stone to greatness.”</p>
+                        <div>
+                            <p style="font-weight: 600;">Oprah Winfrey</p>
+                            <p style="font-size: 14px; color: #6b7280;">Pakistani education activist</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="font-size: 32px; color: #9333ea; margin-bottom: 16px;">"</div>
+                        <p style="font-style: italic; color: #6b7280; margin-bottom: 16px;">"“There is no limit to what we, as women, can accomplish.”"</p>
+                        <div>
+                            <p style="font-weight: 600;">Michelle Obama</p>
+                            <p style="font-size: 14px; color: #6b7280;">Attorney and former First Lady of the United States</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8">
+                    <a href="#contact" class="btn btn-primary">Share Your Story →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Section -->
+    <section id="articles" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Latest Articles & Insights</h2>
+                <p>Stay informed with our latest articles, research, and expert insights on women's empowerment, leadership, and career advancement.</p>
+            </div>
+
+            <!-- Featured Article -->
+            <div class="card mb-8" style="overflow: hidden;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1646295404846-658322e343e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMGVtcG93ZXJtZW50JTIwbGVhZGVyc2hpcHxlbnwxfHx8fDE3NTg5ODQxNDd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Breaking the Glass Ceiling" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 32px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="margin-bottom: 16px;">
+                            <span class="badge badge-primary">Featured</span>
+                            <span class="badge badge-secondary" style="margin-left: 8px;">Leadership</span>
+                        </div>
+                        <h3 style="font-size: 24px; font-weight: bold; margin-bottom: 16px; line-height: 1.3;">Breaking the Glass Ceiling: A Guide for Aspiring Female Leaders</h3>
+                        <p style="color: #6b7280; margin-bottom: 16px;">Practical strategies and insights for women looking to advance into leadership roles across various industries.</p>
+                        <div style="color: #6b7280; font-size: 14px; margin-bottom: 24px;">
+                            <span>By Sarah Mitchell</span> • 
+                            <span>📅 March 15, 2024</span> • 
+                            <span>⏱️ 8 min read</span>
+                        </div>
+                        <a href="#" class="btn btn-primary" style="width: fit-content;">Read Full Article →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article Grid -->
+            <div class="card-grid mb-8">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1636986905406-758b0e280f49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMHN1cHBvcnRpbmclMjB3b21lbnxlbnwxfHx8fDE3NTg4NzgwNzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Networking" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                    <div style="padding: 24px;">
+                        <span class="badge badge-secondary" style="margin-bottom: 12px;">Career Growth</span>
+                        <h4 style="font-weight: bold; margin-bottom: 12px;">The Power of Networking: Building Meaningful Professional Relationships</h4>
+                        <p style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">Learn how to build authentic connections that will propel your career forward and create lasting professional relationships.</p>
+                        <div style="display: flex; justify-content: between; align-items: center; font-size: 12px; color: #6b7280; padding-top: 12px; border-top: 1px solid #e5e7eb;">
+                            <span>By Dr. Angela Davis</span>
+                            <span>⏱️ 6 min read</span>
+                        </div>
+                        <a href="#" class="btn btn-outline w-full mt-8">Read Article →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1650784854945-264d5b0b6b07?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwd29tZW4lMjBwcm9mZXNzaW9uYWxzfGVufDF8fHx8MTc1ODk4NDE0N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Work-Life Balance" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                    <div style="padding: 24px;">
+                        <span class="badge badge-secondary" style="margin-bottom: 12px;">Wellness</span>
+                        <h4 style="font-weight: bold; margin-bottom: 12px;">Work-Life Integration: Redefining Balance for Modern Women</h4>
+                        <p style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">Moving beyond traditional work-life balance to create sustainable integration strategies that work for today's ambitious women.</p>
+                        <div style="display: flex; justify-content: between; align-items: center; font-size: 12px; color: #6b7280; padding-top: 12px; border-top: 1px solid #e5e7eb;">
+                            <span>By Maria Rodriguez</span>
+                            <span>⏱️ 7 min read</span>
+                        </div>
+                        <a href="#" class="btn btn-outline w-full mt-8">Read Article →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmZW1hbGUlMjBlbnRyZXByZW5ldXJ8ZW58MXx8fHwxNzU4OTg0MTQ4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Financial Empowerment" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                    <div style="padding: 24px;">
+                        <span class="badge badge-secondary" style="margin-bottom: 12px;">Finance</span>
+                        <h4 style="font-weight: bold; margin-bottom: 12px;">Financial Empowerment: Investment Strategies for Women</h4>
+                        <p style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">Take control of your financial future with proven investment strategies designed specifically for women's unique challenges and goals.</p>
+                        <div style="display: flex; justify-content: between; align-items: center; font-size: 12px; color: #6b7280; padding-top: 12px; border-top: 1px solid #e5e7eb;">
+                            <span>By Jennifer Kim</span>
+                            <span>⏱️ 10 min read</span>
+                        </div>
+                        <a href="#" class="btn btn-outline w-full mt-8">Read Article →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Newsletter Signup -->
+            <div class="card" style="background: linear-gradient(135deg, #9333ea, #ec4899); color: white; text-align: center; padding: 48px;">
+                <div style="font-size: 48px; margin-bottom: 16px;">📚</div>
+                <h3 style="margin-bottom: 16px;">Stay Updated with Our Newsletter</h3>
+                <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Get the latest articles, success stories, and empowerment resources delivered directly to your inbox every week.
+                </p>
+                <div class="newsletter">
+                    <input type="email" placeholder="Enter your email address" style="flex: 1; padding: 12px 16px; border: none; border-radius: 8px; color: #030213;">
+                    <button class="btn" style="background: white; color: #9333ea; padding: 12px 24px;">Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section" style="background: linear-gradient(to bottom, #ffffff, #faf5ff);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Empowerment Resources</h2>
+                <p>Access our comprehensive library of tools, guides, courses, and resources designed to support your personal and professional growth journey.</p>
+            </div>
+
+            <div style="margin-bottom: 64px;">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 32px;">
+                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #9333ea, #ec4899); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white;">💼</div>
+                    <div>
+                        <h3 style="font-size: 24px; font-weight: bold;">Professional Development</h3>
+                        <p style="color: #6b7280;">Tools and guides for career advancement</p>
+                    </div>
+                </div>
+
+                <div class="card-grid">
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                            <h4 style="font-weight: 600;">Leadership Skills Assessment</h4>
+                            <span class="badge" style="background: #dbeafe; color: #1e40af;">Tool</span>
+                        </div>
+                        <p style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">Comprehensive assessment to identify your leadership strengths and growth areas.</p>
+                        <div style="display: flex; justify-content: space-between; font-size: 12px; color: #6b7280; margin-bottom: 16px;">
+                            <span>⭐ 4.8</span>
+                            <span>📥 2.3K downloads</span>
+                        </div>
+                        <a href="#" class="btn btn-outline w-full">📥 Access Resource</a>
+                    </div>
+
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                            <h4 style="font-weight: 600;">Salary Negotiation Guide</h4>
+                            <span class="badge" style="background: #dbeafe; color: #1e40af;">PDF</span>
+                        </div>
+                        <p style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">Step-by-step guide to researching, preparing, and conducting salary negotiations.</p>
+                        <div style="display: flex; justify-content: space-between; font-size: 12px; color: #6b7280; margin-bottom: 16px;">
+                            <span>⭐ 4.9</span>
+                            <span>📥 5.1K downloads</span>
+                        </div>
+                        <a href="#" class="btn btn-outline w-full">📥 Access Resource</a>
+                    </div>
+
+                    <div class="card">
+                        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px;">
+                            <h4 style="font-weight: 600;">Professional Network Building</h4>
+                            <span class="badge" style="background: #dcfce7; color: #166534;">Video Course</span>
+                        </div>
+                        <p style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">Learn how to build meaningful professional relationships that advance your career.</p>
+                        <div style="display: flex; justify-content: space-between; font-size: 12px; color: #6b7280; margin-bottom: 16px;">
+                            <span>⭐ 4.7</span>
+                            <span>📥 1.8K downloads</span>
+                        </div>
+                        <a href="#" class="btn btn-outline w-full">🎥 Access Resource</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Partner Resources -->
+            <div class="card" style="padding: 48px;">
+                <div class="text-center mb-8">
+                    <h3 style="margin-bottom: 16px;">Featured Partner Resources</h3>
+                    <p style="color: #6b7280;">Exclusive resources from our partners and industry leaders</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px;">
+                    <div class="card" style="background: linear-gradient(135deg, #faf5ff, #ffffff); border: 1px solid #e5e7eb; text-align: center;">
+                        <div style="font-size: 32px; color: #9333ea; margin-bottom: 12px;">👥</div>
+                        <h4 style="font-weight: 600; margin-bottom: 8px;">Mentorship Matching</h4>
+                        <p style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">Connect with industry leaders and experienced professionals</p>
+                        <a href="#" class="btn btn-outline" style="border-color: #ddd6fe; color: #9333ea;">Find a Mentor</a>
+                    </div>
+
+                    <div class="card" style="background: linear-gradient(135deg, #fef7f0, #ffffff); border: 1px solid #e5e7eb; text-align: center;">
+                        <div style="font-size: 32px; color: #ec4899; margin-bottom: 12px;">📚</div>
+                        <h4 style="font-weight: 600; margin-bottom: 8px;">Exclusive eBooks</h4>
+                        <p style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">In-depth guides written by successful women leaders</p>
+                        <a href="#" class="btn btn-outline" style="border-color: #fce7f3; color: #ec4899;">Browse Library</a>
+                    </div>
+
+                    <div class="card" style="background: linear-gradient(135deg, #fff7ed, #ffffff); border: 1px solid #e5e7eb; text-align: center;">
+                        <div style="font-size: 32px; color: #f97316; margin-bottom: 12px;">🎥</div>
+                        <h4 style="font-weight: 600; margin-bottom: 8px;">Masterclass Series</h4>
+                        <p style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">Live and recorded sessions with industry experts</p>
+                        <a href="#" class="btn btn-outline" style="border-color: #fed7aa; color: #f97316;">Watch Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <a href="#" class="btn btn-primary">Explore All Resources 🔗</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Upcoming Events & Programs</h2>
+                <p>Join our community events, workshops, and networking sessions designed to accelerate your personal and professional growth.</p>
+            </div>
+
+            <!-- Featured Event -->
+            <div class="card mb-8" style="overflow: hidden; border: 2px solid #ddd6fe;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0;">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMGluJTIwdGVjaG5vbG9neXxlbnwxfHx8fDE3NTg5ODQxNTF8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Women in Tech Summit" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div style="padding: 32px; display: flex; flex-direction: column; justify-content: center;">
+                        <div style="margin-bottom: 16px;">
+                            <span class="badge badge-primary">Featured Event</span>
+                            <span class="badge badge-secondary" style="margin-left: 8px;">Technology</span>
+                            <span class="badge" style="background: #dcfce7; color: #166534; margin-left: 8px;">📍 In-Person</span>
+                        </div>
+                        <h3 style="font-size: 24px; font-weight: bold; margin-bottom: 16px; line-height: 1.3;">Women in Tech Leadership Summit 2024</h3>
+                        <p style="color: #6b7280; margin-bottom: 16px;">Join leading women in technology for a day of inspiring talks, networking, and career development opportunities.</p>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-size: 14px; color: #6b7280; margin-bottom: 16px;">
+                            <div>📅 April 15, 2024</div>
+                            <div>⏰ 9:00 AM - 5:00 PM PST</div>
+                            <div>📍 San Francisco, CA</div>
+                            <div>👥 500 attendees</div>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <span style="font-size: 24px; font-weight: bold; color: #10b981;">Free</span>
+                                <p style="font-size: 12px; color: #6b7280;">Early bird pricing</p>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 14px;">🔔 Remind Me</a>
+                                <a href="#" class="btn btn-primary">Register Now →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Grid -->
+            <div class="card-grid mb-8">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmZW1hbGUlMjBlbnRyZXByZW5ldXJ8ZW58MXx8fHwxNzU4OTg0MTQ4fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Financial Workshop" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                    <div style="padding: 24px;">
+                        <div style="margin-bottom: 12px;">
+                            <span class="badge badge-secondary">Finance</span>
+                            <span class="badge" style="background: #dbeafe; color: #1e40af; margin-left: 8px;">🎥 Online</span>
+                        </div>
+                        <h4 style="font-weight: bold; margin-bottom: 8px;">Financial Empowerment Workshop</h4>
+                        <p style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">Learn practical strategies for building wealth, investing wisely, and achieving financial independence.</p>
+                        
+                        <div style="font-size: 12px; color: #6b7280; margin-bottom: 16px;">
+                            <div>📅 April 10, 2024</div>
+                            <div>⏰ 6:00 PM - 8:00 PM EST</div>
+                            <div>🎥 Virtual</div>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                            <span style="font-size: 18px; font-weight: bold; color: #10b981;">$25</span>
+                            <span style="font-size: 12px; color: #6b7280;">👥 200</span>
+                        </div>
+
+                        <a href="#" class="btn btn-outline w-full">Register →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1636986905406-758b0e280f49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMHN1cHBvcnRpbmclMjB3b21lbnxlbnwxfHx8fDE3NTg4NzgwNzJ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Networking Mixer" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                    <div style="padding: 24px;">
+                        <div style="margin-bottom: 12px;">
+                            <span class="badge badge-secondary">Networking</span>
+                            <span class="badge" style="background: #dcfce7; color: #166534; margin-left: 8px;">📍 In-Person</span>
+                        </div>
+                        <h4 style="font-weight: bold; margin-bottom: 8px;">Networking Mixer: Building Your Professional Circle</h4>
+                        <p style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">Connect with like-minded professional women in a relaxed, supportive environment.</p>
+                        
+                        <div style="font-size: 12px; color: #6b7280; margin-bottom: 16px;">
+                            <div>📅 April 8, 2024</div>
+                            <div>⏰ 7:00 PM - 9:00 PM PST</div>
+                            <div>📍 Los Angeles, CA</div>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                            <span style="font-size: 18px; font-weight: bold; color: #10b981;">Free</span>
+                            <span style="font-size: 12px; color: #6b7280;">👥 150</span>
+                        </div>
+
+                        <a href="#" class="btn btn-outline w-full">Register →</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1646295404846-658322e343e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21lbiUyMGVtcG93ZXJtZW50JTIwbGVhZGVyc2hpcHxlbnwxfHx8fDE3NTg5ODQxNDd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Leadership Masterclass" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
+                    <div style="padding: 24px;">
+                        <div style="margin-bottom: 12px;">
+                            <span class="badge badge-secondary">Leadership</span>
+                            <span class="badge" style="background: #dbeafe; color: #1e40af; margin-left: 8px;">🎥 Online</span>
+                        </div>
+                        <h4 style="font-weight: bold; margin-bottom: 8px;">Leadership Masterclass: From Manager to Executive</h4>
+                        <p style="font-size: 14px; color: #6b7280; margin-bottom: 16px;">Advanced leadership strategies for women ready to take the next step in their executive journey.</p>
+                        
+                        <div style="font-size: 12px; color: #6b7280; margin-bottom: 16px;">
+                            <div>📅 April 12, 2024</div>
+                            <div>⏰ 12:00 PM - 2:00 PM EST</div>
+                            <div>🎥 Virtual</div>
+                        </div>
+
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                            <span style="font-size: 18px; font-weight: bold; color: #10b981;">$50</span>
+                            <span style="font-size: 12px; color: #6b7280;">👥 300</span>
+                        </div>
+
+                        <a href="#" class="btn btn-outline w-full">Register →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event Calendar CTA -->
+            <div class="card" style="background: linear-gradient(135deg, #9333ea, #ec4899); color: white; text-align: center; padding: 48px;">
+                <div style="font-size: 48px; margin-bottom: 16px;">🌍</div>
+                <h3 style="margin-bottom: 16px;">Never Miss an Event</h3>
+                <p style="color: rgba(255, 255, 255, 0.9); margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    Subscribe to our event calendar and get notified about upcoming workshops, networking events, and exclusive opportunities.
+                </p>
+                <div style="display: flex; flex-wrap: justify-content: center; gap: 16px;">
+                    <a href="#" class="btn" style="background: white; color: #9333ea;">📅 Add to Calendar</a>
+                    <a href="#" class="btn btn-outline" style="border-color: white; color: white;">🔔 Enable Notifications</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Have questions, ideas, or want to collaborate? We'd love to hear from you. Our team is here to support your journey and answer any questions you might have.</p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Contact Form -->
+                <div class="card">
+                    <h3 style="margin-bottom: 8px;">Send us a message</h3>
+                    <p style="color: #6b7280; margin-bottom: 24px;">Fill out the form below and we'll get back to you within 24 hours.</p>
+
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" class="form-control" placeholder="Enter your first name">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" class="form-control" placeholder="Enter your last name">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Enter your email address">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="What is this regarding?">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" placeholder="Tell us how we can help you..."></textarea>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 24px;">
+                            <input type="checkbox" id="newsletter" style="width: 16px; height: 16px;">
+                            <label for="newsletter" style="font-size: 14px; margin: 0;">I'd like to receive updates and newsletters from Women Empowered</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-full">📧 Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <h3 style="margin-bottom: 24px;">How can we help you?</h3>
+                    <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px;">
+                        <div class="card" style="padding: 16px;">
+                            <div style="display: flex; align-items: start; gap: 16px;">
+                                <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #ddd6fe, #fce7f3); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9333ea; flex-shrink: 0;">💬</div>
+                                <div>
+                                    <h4 style="font-weight: 600; margin-bottom: 4px;">General Inquiries</h4>
+                                    <p style="font-size: 14px; color: #6b7280;">Questions about our mission, programs, or how to get involved</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" style="padding: 16px;">
+                            <div style="display: flex; align-items: start; gap: 16px;">
+                                <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #ddd6fe, #fce7f3); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9333ea; flex-shrink: 0;">👥</div>
+                                <div>
+                                    <h4 style="font-weight: 600; margin-bottom: 4px;">Partnership Opportunities</h4>
+                                    <p style="font-size: 14px; color: #6b7280;">Collaborate with us to create meaningful impact for women</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" style="padding: 16px;">
+                            <div style="display: flex; align-items: start; gap: 16px;">
+                                <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #ddd6fe, #fce7f3); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9333ea; flex-shrink: 0;">💡</div>
+                                <div>
+                                    <h4 style="font-weight: 600; margin-bottom: 4px;">Speaking & Events</h4>
+                                    <p style="font-size: 14px; color: #6b7280;">Invite our team to speak at your event or conference</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card" style="padding: 16px;">
+                            <div style="display: flex; align-items: start; gap: 16px;">
+                                <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #ddd6fe, #fce7f3); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: #9333ea; flex-shrink: 0;">❤️</div>
+                                <div>
+                                    <h4 style="font-weight: 600; margin-bottom: 4px;">Support & Donations</h4>
+                                    <p style="font-size: 14px; color: #6b7280;">Learn how you can support our mission financially</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 style="margin-bottom: 24px;">Contact Information</h3>
+                    <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
+                        <div class="card" style="padding: 16px;">
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #9333ea, #ec4899); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0;">📧</div>
+                                <div style="flex-grow: 1;">
+                                    <h4 style="font-weight: 600;">Email Us</h4>
+                                    <p style="font-size: 14px; color: #6b7280; margin-bottom: 4px;">Get in touch with our team</p>
+                                    <p style="font-size: 14px; font-weight: 500;">hello@womenempowered.org</p>
+                                </div>
+                                <a href="mailto:hello@womenempowered.org" class="btn btn-outline" style="padding: 8px 16px; font-size: 14px;">Send Email</a>
+                            </div>
+                        </div>
+
+                        <div class="card" style="padding: 16px;">
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #9333ea, #ec4899); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0;">📞</div>
+                                <div style="flex-grow: 1;">
+                                    <h4 style="font-weight: 600;">Call Us</h4>
+                                    <p style="font-size: 14px; color: #6b7280; margin-bottom: 4px;">Speak with our support team</p>
+                                    <p style="font-size: 14px; font-weight: 500;">+639606258299</p>
+                                </div>
+                                <a href="tel:+15551234567" class="btn btn-outline" style="padding: 8px 16px; font-size: 14px;">Call Now</a>
+                            </div>
+                        </div>
+
+                        <div class="card" style="padding: 16px;">
+                            <div style="display: flex; align-items: center; gap: 16px;">
+                                <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #9333ea, #ec4899); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; flex-shrink: 0;">📍</div>
+                                <div style="flex-grow: 1;">
+                                    <h4 style="font-weight: 600;">Visit Us</h4>
+                                    <p style="font-size: 14px; color: #6b7280; margin-bottom: 4px;">Our headquarters location</p>
+                                    <p style="font-size: 14px; font-weight: 500;">123 Empowerment Ave, San Francisco, CA 94102</p>
+                                </div>
+                                <a href="#" class="btn btn-outline" style="padding: 8px 16px; font-size: 14px;">Get Directions</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card" style="background: linear-gradient(135deg, #9333ea, #ec4899); color: white; text-align: center; padding: 24px;">
+                        <div style="font-size: 32px; margin-bottom: 12px;">⏰</div>
+                        <h4 style="font-weight: 600; margin-bottom: 8px;">Office Hours</h4>
+                        <div style="font-size: 14px; opacity: 0.9;">
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM PST</p>
+                            <p>Saturday: 10:00 AM - 4:00 PM PST</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                        <p style="font-size: 12px; margin-top: 12px; opacity: 0.75;">
+                            We typically respond to emails within 24 hours during business days.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-brand">
+                        <div class="logo-icon">WE</div>
+                        <span style="font-size: 20px; font-weight: bold;">Women Empowered</span>
+                    </div>
+                    <p class="footer-text">
+                        Empowering women worldwide through education, mentorship, and community support. 
+                        Together, we're breaking barriers and creating lasting change across all industries.
+                    </p>
+                    <div>
+                        <h4 style="font-weight: 600; margin-bottom: 12px;">Stay Connected</h4>
+                        <div class="social-links">
+                            <a href="#" class="social-link">f</a>
+                            <a href="#" class="social-link">t</a>
+                            <a href="#" class="social-link">i</a>
+                            <a href="#" class="social-link">in</a>
+                            <a href="#" class="social-link">yt</a>
+                        </div>
+                    </div>
+                    <div class="card" style="background: #374151; padding: 16px;">
+                        <h4 style="font-weight: 600; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; color: white;">
+                            📧 Newsletter Signup
+                        </h4>
+                        <p style="color: #9ca3af; font-size: 14px; margin-bottom: 12px;">
+                            Get weekly inspiration and resources delivered to your inbox.
+                        </p>
+                        <div class="newsletter">
+                            <input type="email" placeholder="Your email address">
+                            <button class="btn btn-primary" style="padding: 8px 16px; font-size: 14px;">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4>About</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">Our Mission</a></li>
+                        <li><a href="#about">Leadership Team</a></li>
+                        <li><a href="#stories">Success Stories</a></li>
+                        <li><a href="#">Impact Report</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Programs</h4>
+                    <ul class="footer-links">
+                        <li><a href="#resources">Mentorship</a></li>
+                        <li><a href="#events">Workshops</a></li>
+                        <li><a href="#events">Networking Events</a></li>
+                        <li><a href="#resources">Leadership Training</a></li>
+                        <li><a href="#resources">Scholarships</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#articles">Articles & Insights</a></li>
+                        <li><a href="#resources">Professional Tools</a></li>
+                        <li><a href="#resources">Career Guides</a></li>
+                        <li><a href="#articles">Industry Reports</a></li>
+                        <li><a href="#resources">Webinar Library</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Community</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Join Our Network</a></li>
+                        <li><a href="#">Member Directory</a></li>
+                        <li><a href="#">Discussion Forums</a></li>
+                        <li><a href="#">Local Chapters</a></li>
+                        <li><a href="#contact">Volunteer</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px;">
+                    <p style="display: flex; align-items: center; gap: 4px;">
+                        Made with ❤️ for women everywhere
+                    </p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 24px;">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Code of Conduct</a>
+                        <a href="#">Accessibility</a>
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <p>© 2024 Women Empowered. All rights reserved.</p>
+                    <button onclick="scrollToTop()" style="background: none; border: none; color: #9ca3af; cursor: pointer; padding: 8px;">↑</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Impact Stats Bar -->
+        <div style="background: linear-gradient(135deg, #9333ea, #ec4899);">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; text-align: center; color: white; padding: 16px 0;">
+                    <div>
+                        <div style="font-weight: bold; font-size: 18px;">10,000+</div>
+                        <div style="font-size: 12px; opacity: 0.9;">Women Empowered</div>
+                    </div>
+                    <div>
+                        <div style="font-weight: bold; font-size: 18px;">500+</div>
+                        <div style="font-size: 12px; opacity: 0.9;">Success Stories</div>
+                    </div>
+                    <div>
+                        <div style="font-weight: bold; font-size: 18px;">50+</div>
+                        <div style="font-size: 12px; opacity: 0.9;">Countries Reached</div>
+                    </div>
+                    <div>
+                        <div style="font-weight: bold; font-size: 18px;">200+</div>
+                        <div style="font-size: 12px; opacity: 0.9;">Partner Organizations</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll to top function
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!mobileNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mobileNav.classList.remove('active');
+            }
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We\'ll get back to you within 24 hours.');
+        });
+
+        // Newsletter subscriptions
+        document.querySelectorAll('.newsletter').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for subscribing to our newsletter!');
+            });
+        });
+    </script>
+</body>
+</html>
